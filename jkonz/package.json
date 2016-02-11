@@ -1,0 +1,15 @@
+{
+  "name": "node_proj",
+  "version": "1.0.0",
+  "description": "First project for EC500, a node.js application that communicates between a webserver and a web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.8.1"
+  }
+}
