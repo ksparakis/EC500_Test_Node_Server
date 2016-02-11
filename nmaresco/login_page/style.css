@@ -1,0 +1,48 @@
+*{
+  font-family: "Comic Sans MS";
+}
+
+body{
+  background: url("/symphony.png");
+}
+
+#login-container{
+  margin-top: calc(25% - 150px);
+  margin-left: calc(50% - 150px);
+  text-align: center;
+  background: rgb(244, 176, 164);
+  border:solid 1px rgb(244, 176, 164);
+  border-bottom: rgb(163, 33, 11) 3px solid;
+  border-radius: 7px;
+  /*box-shadow: 3px 3px 15px black;*/
+  width:300px;
+  padding: 20px;
+  padding-top: 0px;
+}
+
+#login-container > *{
+  display: block;
+}
+
+.input-container-text h3{
+  margin: 0px;
+  margin-left: 10px;
+  margin-top: -20px;
+  text-align: left;
+}
+
+input, h3{
+  font-size: 27px;
+}
+
+input[type="text"]{
+  width: 250px;
+}
+
+input[type="submit"]{
+  background:rgb(246, 235, 202);
+  border: transparent 0px solid;
+  border-bottom: rgb(187, 163, 88) 3px solid;
+  color:black;
+  border-radius: 7px;
+}
