@@ -1,0 +1,54 @@
+﻿<DOCTYPE html>
+<html>
+	<head>
+		<title>Breakfast Sandwich Bay</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript" >
+			$(document).ready(function(){
+				$("button").click(function(){
+					// set variables from user input
+					var input_usrn = $('#userLogin').val(); 
+					var input_psw = $('#userPw').val();
+					var out_ = {"username": input_usrn, "password": input_psw};
+
+					
+					//ajax will ask the server for url: /menu, and send it data for authorization to that page 
+					$.ajax({
+						type: 'POST',
+						data: out_,
+				        dataType: 'json',
+                        url: '/menu',						
+                        success: function(data) {
+						var correct = JSON.stringify(data);		//had to stringify the response data even though it was a string
+
+						if(correct == "true") {
+								alert("Your order is coming right up!");
+
+							}
+							else {
+								alert("NO SANDWICH FOR YOU!!");
+							}
+                        }.bind(this)
+					});
+					
+				});
+			});
+		</script>
+	</head>
+	<body onload = "process()">
+		<h1 align="center">Breakfast Sandwich Bay</h1>
+		<div class="sandwich"></div>
+		<h2 align="center">Login to place your breakfast sandwich order!</h2> 
+		<div align="center" display="block">
+			<p>username: <p>
+			<input type="text" id="userLogin" />
+		<div>
+		<div align="center" display="block">
+			<p>password: </p>
+			<input type="text" id="userPw" />
+		</div>
+		<div id="message"><h2>Welcome!</h2></div> 
+		<button>Login</button>
+	</body>
+</html>

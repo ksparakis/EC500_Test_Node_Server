@@ -1,0 +1,25 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:  #ff5b33;
+  color: white;
+}
+
+a {
+  color: #00b7ff;
+}
+
+div {
+    margin: auto;
+}
+
+button {
+  margin: 40px; 
+}
+
+.sandwich {
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    border: 0px solid;
+    background-image: url(../images/BreakfastRoll.jpg); 
+}
