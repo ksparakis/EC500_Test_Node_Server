@@ -25,14 +25,32 @@ $(document).ready(function()
     var pw = $('#pw').val();
     var submitData = {user: user, pw: pw};
 
-    console.log(submitData);
-    $.ajax({
-      url : "http://localhost:8082/login",
-      type: "POST",
-      data : submitData,
-    });
+    console.log(submitData); 
+    $.ajax(
+    {
+      	url : "http://localhost:8082/login",
+      	type: "POST",
+      	data : submitData,
+      	dataType: 'json',
+		success: function( data ) 
+ 		{
+ 			console.log(data);	
+
+ 			if (data.status == 200)
+ 			{
+ 				alert( data.success );
+ 			}
+ 			else
+ 			{
+ 				alert( data.error );
+ 			}  		
+  		},
+  		error: function(data)
+ 		{
+    		alert( 'Error sending login request');
+  		}
+  	});    
   });
-   
 });
 
 </script>
@@ -43,7 +61,7 @@ $(document).ready(function()
 	<fieldset class="form-group row">
 	    <label for="user" class="col-sm-1 form-control-label">Username:</label>
 	    <div class="col-sm-3">
-	    	<input type="text" class="form-control" id="user" placeholder="TestUser">
+	    	<input type="text" class="form-control" id="user" placeholder="user">
 	    </div>
 	</fieldset>
 
@@ -55,7 +73,7 @@ $(document).ready(function()
 	</fieldset>
 
 	<div class="col-sm-10">
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="input" class="btn btn-primary" id="submit">Submit</button>
 	</div>
 
 
